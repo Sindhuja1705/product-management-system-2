@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: product-management
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+
+server:
+  port: 8080
+
+# JWT (secret must be at least 32 characters for HS256)
+app:
+  jwt:
+    secret: ${JWT_SECRET:ProductManagementJWTSecretKey2024MustBeAtLeast32CharactersLongForHS256}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
+# OpenAPI / Swagger
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    persist-authorization: true
+    custom-css-url: /swagger-custom.css
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when_authorized

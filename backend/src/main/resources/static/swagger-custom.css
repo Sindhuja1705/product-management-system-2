@@ -1,0 +1,9 @@
+/* Custom Swagger UI theme - modern blue accent */
+.swagger-ui .topbar { background: #161b22 !important; }
+.swagger-ui .info .title { color: #58a6ff !important; }
+.swagger-ui .btn.execute { background: #58a6ff !important; border-color: #58a6ff !important; }
+.swagger-ui .btn.execute:hover { background: #79b8ff !important; }
+.swagger-ui .opblock.opblock-post { border-color: #3fb950 !important; background: rgba(63,185,80,0.1) !important; }
+.swagger-ui .opblock.opblock-get { border-color: #58a6ff !important; background: rgba(88,166,255,0.1) !important; }
+.swagger-ui .opblock.opblock-put { border-color: #d29922 !important; }
+.swagger-ui .opblock.opblock-delete { border-color: #f85149 !important; }

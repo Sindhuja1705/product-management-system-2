@@ -1,0 +1,41 @@
+@import './components/shared.css';
+
+:root {
+  /* Light, modern blue theme */
+  --bg-primary: #e5f1ff;        /* soft light blue background */
+  --bg-secondary: #ffffff;      /* cards / surfaces */
+  --bg-tertiary: #d4e4ff;       /* pale blue for strips */
+
+  --text-primary: #0f172a;      /* dark navy text */
+  --text-secondary: #4b5563;    /* secondary text */
+
+  --accent: #3b82f6;            /* bright blue */
+  --accent-hover: #2563eb;      /* slightly darker blue */
+
+  --success: #16a34a;           /* green */
+  --danger: #dc2626;            /* red */
+  --warning: #f59e0b;           /* amber */
+
+  --border: rgba(148, 163, 184, 0.6);
+  --radius: 12px;
+  --radius-sm: 9px;
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, rgba(59, 130, 246, 0.18) 0%, var(--bg-primary) 55%, #ffffff 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
