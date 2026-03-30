@@ -13,4 +13,4 @@ COPY ./src ./src
 
 RUN ./mvnw clean package -DskipTests
 
-CMD ["sh", "-c", "java -jar target/*.jar"]
+CMD ["java", "-jar", "target/product-management-system-1.0.0.jar"]
