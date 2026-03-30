@@ -1,19 +1,16 @@
-FROM eclipse-temurin:17-jdk-alpine AS build
+FROM eclipse-temurin:17-jdk-alpine
+
 WORKDIR /app
 
-COPY mvnw .
-COPY .mvn .mvn
-COPY pom.xml .
-RUN ./mvnw dependency:go-offline -B
+COPY ./mvnw .
+COPY ./.mvn ./.mvn
+COPY ./pom.xml .
 
-COPY src src
-RUN ./mvnw package -DskipTests -B
+RUN chmod +x mvnw
+RUN ./mvnw dependency:go-offline
 
-FROM eclipse-temurin:17-jre-alpine
-WORKDIR /app
+COPY ./src ./src
 
-ARG JAR_FILE=target/*.jar
-COPY --from=build /app/target/product-management-system-1.0.0.jar app.jar
+RUN ./mvnw clean package -DskipTests
 
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "target/*.jar"]
